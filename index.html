@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adarsh Rouniyar — Portfolio</title>
+  <meta name="description" content="AI/ML engineer building LLM, RAG, and blockchain systems." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="wrap">
+    <h1>Adarsh Rouniyar</h1>
+    <p class="tag">AI/ML • NLP • RAG • Smart Contracts</p>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="resume.pdf">Résumé (PDF)</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section id="about">
+      <h2>About</h2>
+      <p>I build end‑to‑end AI systems: LLM + RAG pipelines, APIs, and production deployments with Docker/K8s. I also ship blockchain tooling and trading bots.</p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul class="cards">
+        <li>
+          <h3>WStaking — Smart‑contract staking</h3>
+          <p>Verified contracts on X Layer & BSC powering a live staking platform.</p>
+          <p><a href="https://wstaking.net" target="_blank" rel="noreferrer">wstaking.net</a></p>
+        </li>
+        <li>
+          <h3>Crypto AI Assistant</h3>
+          <p>LLM chatbot with retrieval (RAG), packaged as REST API with FastAPI + Docker.</p>
+        </li>
+        <li>
+          <h3>Azure RAG Demo</h3>
+          <p>Azure Cognitive Search + Azure OpenAI; single <code>POST /ask</code> endpoint.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <ul class="links">
+        <li><a href="mailto:adarsh@csie.io">adarsh@csie.io</a></li>
+        <li><a href="https://www.linkedin.com/in/adarsh-rouniyar-876b1419b/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+        <li><a href="https://github.com/darkblood784" target="_blank" rel="noreferrer">GitHub</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="wrap small">
+    <p>© <span id="y"></span> Adarsh Rouniyar · Hosted on GitHub Pages</p>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
