@@ -1158,8 +1158,13 @@ nav a:hover::after {
 }
 
 @media (max-width: 960px) {
+  :root {
+    scroll-padding-top: 110px;
+  }
+
   .hero {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .network-strip,
@@ -1178,8 +1183,13 @@ nav a:hover::after {
     height: 220px;
   }
 
+  .market-tape {
+    margin: 10px 0 2px;
+  }
+
   nav {
     justify-content: flex-start;
+    gap: 14px 18px;
   }
 
   .chain-line span::after {
@@ -1188,13 +1198,58 @@ nav a:hover::after {
 }
 
 @media (max-width: 640px) {
+  :root {
+    scroll-padding-top: 132px;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
   .wrap {
     width: min(100% - 24px, 1140px);
+  }
+
+  .topbar {
+    padding: 14px 0 12px;
   }
 
   .topbar-inner {
     flex-direction: column;
     align-items: flex-start;
+    gap: 12px;
+  }
+
+  .brand-link {
+    font-size: 0.98rem;
+  }
+
+  nav {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 42px;
+    padding: 9px 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(130, 255, 223, 0.1);
+    background: rgba(10, 29, 44, 0.42);
+    text-align: center;
+    font-size: 0.88rem;
+  }
+
+  nav a::after {
+    display: none;
+  }
+
+  .nav-cta {
+    grid-column: span 3;
   }
 
   .hero-left,
@@ -1206,29 +1261,202 @@ nav a:hover::after {
     padding: 18px;
   }
 
+  .hero {
+    padding: 22px 0 4px;
+  }
+
+  .panel-bar {
+    margin-bottom: 12px;
+  }
+
   .hero-visual {
     height: 190px;
+    margin-bottom: 14px;
   }
 
   .tape-track span {
     font-size: 0.8rem;
+    padding: 7px 12px 7px 22px;
   }
 
   .hero h1 {
-    font-size: 2.45rem;
+    max-width: none;
+    font-size: clamp(2.05rem, 11vw, 2.6rem);
+    line-height: 1.02;
   }
 
-  nav {
-    gap: 16px;
+  .lead {
+    font-size: 0.98rem;
+    margin-bottom: 16px;
+  }
+
+  .chips {
+    gap: 8px;
+  }
+
+  .chip {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.86rem;
+  }
+
+  .meta {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .telemetry-board {
+    gap: 10px;
+  }
+
+  .telemetry-card,
+  .network-item,
+  .chain-card,
+  .stat-card {
+    padding: 14px;
   }
 
   .cta,
   .contact {
     flex-direction: column;
+    gap: 10px;
   }
 
   .btn,
   .contact-btn {
     width: 100%;
+    min-height: 48px;
+  }
+
+  .ops-panel {
+    border-radius: 18px;
+  }
+
+  .ops-head {
+    align-items: flex-start;
+  }
+
+  .console-lines {
+    padding: 12px;
+    gap: 8px;
+    font-size: 0.92rem;
+  }
+
+  .console-lines div {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .console-tag {
+    min-width: 0;
+    width: fit-content;
+  }
+
+  .card,
+  .titem,
+  .pub {
+    border-radius: 18px;
+  }
+
+  .card-top,
+  .tmeta {
+    gap: 8px;
+  }
+
+  .card h3,
+  .pub h3,
+  .titem h3 {
+    font-size: 1.02rem;
+  }
+
+  .badge {
+    font-size: 0.74rem;
+  }
+
+  .bullets {
+    gap: 7px;
+    padding-left: 16px;
+    font-size: 0.95rem;
+  }
+
+  .section {
+    padding-top: 34px;
+  }
+
+  .section > h2 {
+    font-size: 1.45rem;
+    margin-bottom: 14px;
+  }
+
+  .footer {
+    margin-top: 36px;
+    padding-bottom: 90px;
+  }
+
+  .to-top {
+    right: 14px;
+    bottom: 14px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .cursor-glow {
+    display: none;
+  }
+
+  .tilt-panel {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 420px) {
+  :root {
+    scroll-padding-top: 176px;
+  }
+
+  .wrap {
+    width: min(100% - 18px, 1140px);
+  }
+
+  .topbar {
+    padding-top: 12px;
+  }
+
+  nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nav-cta {
+    grid-column: span 2;
+  }
+
+  .hero-left,
+  .hero-card,
+  .card,
+  .titem,
+  .pub,
+  .ops-panel {
+    padding: 16px;
+  }
+
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .hero-visual {
+    height: 168px;
+  }
+
+  .hnum {
+    font-size: 1.35rem;
+  }
+
+  .tape-track {
+    gap: 12px;
+  }
+
+  .tape-track span {
+    font-size: 0.76rem;
   }
 }
