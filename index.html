@@ -39,7 +39,20 @@
         <span>Adarsh Rouniyar</span>
       </a>
 
-      <nav aria-label="Primary">
+      <button
+        id="navToggle"
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="siteNav"
+        aria-label="Open navigation menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="siteNav" aria-label="Primary">
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
         <a href="#publications">Publications</a>
@@ -472,6 +485,8 @@
     document.getElementById("y").textContent = new Date().getFullYear();
 
     const toTop = document.getElementById("toTop");
+    const navToggle = document.getElementById("navToggle");
+    const siteNav = document.getElementById("siteNav");
     const revealItems = document.querySelectorAll(".reveal");
     const tiltPanels = document.querySelectorAll(".tilt-panel");
     const cursorGlow = document.querySelector(".cursor-glow");
@@ -494,6 +509,28 @@
     );
 
     revealItems.forEach((item) => observer.observe(item));
+
+    const closeMobileNav = () => {
+      if (!navToggle || !siteNav) return;
+      navToggle.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("nav-open");
+    };
+
+    if (navToggle && siteNav) {
+      navToggle.addEventListener("click", () => {
+        const isOpen = navToggle.getAttribute("aria-expanded") === "true";
+        navToggle.setAttribute("aria-expanded", String(!isOpen));
+        document.body.classList.toggle("nav-open", !isOpen);
+      });
+
+      siteNav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMobileNav);
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 640) closeMobileNav();
+      });
+    }
 
     if (!reduceMotion) {
       window.addEventListener(

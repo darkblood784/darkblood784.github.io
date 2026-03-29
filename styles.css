@@ -148,6 +148,35 @@ a {
   gap: 20px;
 }
 
+.nav-toggle {
+  display: none;
+  width: 46px;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  border-radius: 14px;
+  border: 1px solid rgba(130, 255, 223, 0.14);
+  background: rgba(10, 29, 44, 0.48);
+  color: #f0ffff;
+  cursor: pointer;
+  transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.nav-toggle span {
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.nav-toggle:hover {
+  border-color: rgba(111, 255, 233, 0.34);
+  background: rgba(14, 38, 56, 0.88);
+}
+
 .brand-link,
 .brand {
   display: inline-flex;
@@ -1215,27 +1244,66 @@ nav a:hover::after {
   }
 
   .topbar-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+    align-items: center;
+    gap: 10px;
+    min-height: 54px;
   }
 
   .brand-link {
     font-size: 0.98rem;
+    margin-right: auto;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .nav-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .nav-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
   }
 
   nav {
-    width: 100%;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    left: 0;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
+    padding: 14px;
+    border-radius: 18px;
+    border: 1px solid rgba(130, 255, 223, 0.14);
+    background: rgba(6, 20, 31, 0.94);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 24px 44px rgba(0, 0, 0, 0.34);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
+  }
+
+  body.nav-open nav {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 
   nav a {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 42px;
+    min-height: 44px;
     padding: 9px 10px;
     border-radius: 12px;
     border: 1px solid rgba(130, 255, 223, 0.1);
@@ -1249,7 +1317,7 @@ nav a:hover::after {
   }
 
   .nav-cta {
-    grid-column: span 3;
+    grid-column: span 2;
   }
 
   .hero-left,
