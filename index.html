@@ -28,6 +28,7 @@
 <body>
   <div class="page-noise" aria-hidden="true"></div>
   <div class="page-grid" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
   <div id="top"></div>
   <a class="skip" href="#projects">Skip to content</a>
 
@@ -50,7 +51,7 @@
 
   <main class="wrap">
     <section class="hero reveal">
-      <div class="hero-left">
+      <div class="hero-left tilt-panel">
         <div class="panel-bar" aria-hidden="true">
           <span>CORE</span>
           <span>OPS</span>
@@ -127,7 +128,22 @@
         </div>
       </div>
 
-      <aside class="hero-card reveal reveal-delay">
+      <aside class="hero-card tilt-panel reveal reveal-delay">
+        <div class="hero-visual" aria-hidden="true">
+          <div class="orbital-ring ring-a"></div>
+          <div class="orbital-ring ring-b"></div>
+          <div class="orbital-ring ring-c"></div>
+          <div class="core-node">
+            <span class="core-ping"></span>
+            <strong>AR</strong>
+          </div>
+          <div class="satellite sat-a"></div>
+          <div class="satellite sat-b"></div>
+          <div class="satellite sat-c"></div>
+          <div class="beam beam-a"></div>
+          <div class="beam beam-b"></div>
+        </div>
+
         <div class="chain-panel">
           <div class="chain-line" aria-hidden="true">
             <span></span>
@@ -180,8 +196,29 @@
       </div>
     </section>
 
+    <section class="market-tape reveal" aria-label="Live protocol tape">
+      <div class="tape-track">
+        <span>TVL +1M USDT/USDC</span>
+        <span>BNB Chain online</span>
+        <span>X Layer online</span>
+        <span>Base online</span>
+        <span>EIP-191 verification active</span>
+        <span>RAG pipeline active</span>
+        <span>Audit remediation validated</span>
+        <span>Telegram alerts online</span>
+        <span>TVL +1M USDT/USDC</span>
+        <span>BNB Chain online</span>
+        <span>X Layer online</span>
+        <span>Base online</span>
+        <span>EIP-191 verification active</span>
+        <span>RAG pipeline active</span>
+        <span>Audit remediation validated</span>
+        <span>Telegram alerts online</span>
+      </div>
+    </section>
+
     <section class="ops-grid reveal" aria-label="Operations dashboard">
-      <div class="ops-panel chain-matrix">
+      <div class="ops-panel chain-matrix tilt-panel">
         <div class="ops-head">
           <span class="eyebrow">Chain Matrix</span>
           <span class="ops-state">Live</span>
@@ -205,7 +242,7 @@
         </div>
       </div>
 
-      <div class="ops-panel signal-console">
+      <div class="ops-panel signal-console tilt-panel">
         <div class="ops-head">
           <span class="eyebrow">Signal Console</span>
           <span class="ops-state">Streaming</span>
@@ -223,7 +260,7 @@
       <h2>Projects</h2>
 
       <div class="grid cards">
-        <article class="card">
+        <article class="card tilt-panel">
           <div class="card-top">
             <h3>WStaking Multi-Chain DeFi Platform</h3>
             <span class="badge">Web3 Infra</span>
@@ -244,7 +281,7 @@
           </div>
         </article>
 
-        <article class="card">
+        <article class="card tilt-panel">
           <div class="card-top">
             <h3>Almond teAI</h3>
             <span class="badge">Security AI</span>
@@ -261,7 +298,7 @@
           <p class="stack"><span>Stack:</span> Next.js, TypeScript, Prisma, SQLite, security analysis</p>
         </article>
 
-        <article class="card">
+        <article class="card tilt-panel">
           <div class="card-top">
             <h3>Crypto AI Assistant</h3>
             <span class="badge">LLM + RAG</span>
@@ -277,7 +314,7 @@
           <p class="stack"><span>Stack:</span> Python, NLP, RAG, REST APIs, Docker, Kubernetes</p>
         </article>
 
-        <article class="card">
+        <article class="card tilt-panel">
           <div class="card-top">
             <h3>Automated Trading Infrastructure</h3>
             <span class="badge">Automation</span>
@@ -293,7 +330,7 @@
           <p class="stack"><span>Stack:</span> Python, OKX APIs, Docker, Pine Script</p>
         </article>
 
-        <article class="card">
+        <article class="card tilt-panel">
           <div class="card-top">
             <h3>Eff-AQI Federated Learning System</h3>
             <span class="badge">Research</span>
@@ -319,7 +356,7 @@
       <h2>Experience</h2>
 
       <div class="timeline">
-        <div class="titem">
+        <div class="titem tilt-panel">
           <div class="tmeta">
             <h3>Chief Technology Officer & Applied AI Engineer - Whale Strategy Co., Ltd.</h3>
             <span class="date">Apr 2024 - Present</span>
@@ -334,7 +371,7 @@
           </ul>
         </div>
 
-        <div class="titem">
+        <div class="titem tilt-panel">
           <div class="tmeta">
             <h3>AI Research Assistant & Project Assistant - National Chung Cheng University</h3>
             <span class="date">Nov 2021 - May 2024</span>
@@ -352,7 +389,7 @@
       <h2>Technical Skills</h2>
 
       <div class="pubs skills-grid">
-        <div class="pub">
+        <div class="pub tilt-panel">
           <h3>AI & ML</h3>
           <ul class="bullets">
             <li>LLM integration, RAG, NLP pipelines, deep learning, computer vision</li>
@@ -360,7 +397,7 @@
           </ul>
         </div>
 
-        <div class="pub">
+        <div class="pub tilt-panel">
           <h3>Blockchain & Security</h3>
           <ul class="bullets">
             <li>EVM smart contracts, multi-chain dApps, Wagmi, Ethers.js</li>
@@ -368,7 +405,7 @@
           </ul>
         </div>
 
-        <div class="pub">
+        <div class="pub tilt-panel">
           <h3>Backend & Infra</h3>
           <ul class="bullets">
             <li>Python, Rust, TypeScript, JavaScript, Node.js, REST APIs</li>
@@ -382,7 +419,7 @@
       <h2>Publications</h2>
 
       <div class="pubs">
-        <div class="pub">
+        <div class="pub tilt-panel">
           <h3>Selected Publications</h3>
           <ul class="bullets">
             <li><strong>Artificial Intelligence Review (2024):</strong> Federated Learning Design and Functional Models: Survey</li>
@@ -392,7 +429,7 @@
           </ul>
         </div>
 
-        <div class="pub">
+        <div class="pub tilt-panel">
           <h3>Education</h3>
           <ul class="bullets">
             <li><strong>M.Sc., CSIE:</strong> National Chung Cheng University, Taiwan</li>
@@ -400,7 +437,7 @@
           </ul>
         </div>
 
-        <div class="pub">
+        <div class="pub tilt-panel">
           <h3>Additional</h3>
           <ul class="bullets">
             <li>Languages: English, Hindi, Nepali; Mandarin (basic)</li>
@@ -436,6 +473,9 @@
 
     const toTop = document.getElementById("toTop");
     const revealItems = document.querySelectorAll(".reveal");
+    const tiltPanels = document.querySelectorAll(".tilt-panel");
+    const cursorGlow = document.querySelector(".cursor-glow");
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const toggleToTop = () => {
       if (window.scrollY > 400) toTop.classList.add("show");
@@ -454,6 +494,41 @@
     );
 
     revealItems.forEach((item) => observer.observe(item));
+
+    if (!reduceMotion) {
+      window.addEventListener(
+        "pointermove",
+        (event) => {
+          document.body.style.setProperty("--mx", event.clientX + "px");
+          document.body.style.setProperty("--my", event.clientY + "px");
+
+          if (cursorGlow) {
+            cursorGlow.style.transform = `translate(${event.clientX - 140}px, ${event.clientY - 140}px)`;
+          }
+        },
+        { passive: true }
+      );
+
+      tiltPanels.forEach((panel) => {
+        panel.addEventListener("pointermove", (event) => {
+          const rect = panel.getBoundingClientRect();
+          const px = (event.clientX - rect.left) / rect.width;
+          const py = (event.clientY - rect.top) / rect.height;
+          const rotateY = (px - 0.5) * 10;
+          const rotateX = (0.5 - py) * 8;
+
+          panel.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+          panel.style.setProperty("--shine-x", `${px * 100}%`);
+          panel.style.setProperty("--shine-y", `${py * 100}%`);
+        });
+
+        panel.addEventListener("pointerleave", () => {
+          panel.style.transform = "";
+          panel.style.removeProperty("--shine-x");
+          panel.style.removeProperty("--shine-y");
+        });
+      });
+    }
 
     window.addEventListener("scroll", toggleToTop, { passive: true });
     toggleToTop();
