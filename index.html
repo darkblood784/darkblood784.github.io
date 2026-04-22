@@ -49,7 +49,7 @@ a{color:inherit;text-decoration:none}
 .section-title{font-family:'Orbitron',sans-serif;font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:700;letter-spacing:0.05em}
 .section-line{flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent)}
 /* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;padding:80px 0 60px;position:relative}
+.hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:80px 0 60px;position:relative}
 .hero-grid{display:grid;grid-template-columns:1fr 440px;gap:40px;align-items:center;width:100%}
 .scan-line{position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(0,240,212,0.6),transparent);animation:scanDown 4s linear infinite;pointer-events:none;z-index:3}
 .hero-tag{display:inline-flex;align-items:center;gap:8px;padding:5px 14px;border-radius:var(--r);border:1px solid rgba(0,255,136,0.25);background:rgba(0,255,136,0.06);font-family:'JetBrains Mono',monospace;font-size:0.76rem;color:var(--green);letter-spacing:0.06em;margin-bottom:22px}
@@ -259,9 +259,51 @@ footer{padding:26px 0;border-top:1px solid var(--border);text-align:center;color
 @keyframes glitchT{0%,90%,100%{transform:translate(0)}91%{transform:translate(-2px,-1px)}94%{transform:translate(2px,0)}97%{transform:translate(-1px,1px)}}
 @keyframes glitchB{0%,90%,100%{transform:translate(0)}92%{transform:translate(2px,1px)}95%{transform:translate(-2px,0)}98%{transform:translate(1px,-1px)}}
 /* RESPONSIVE */
-@media(max-width:768px){.nav-toggle{display:flex}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:rgba(1,11,15,0.98);backdrop-filter:blur(20px);padding:16px;gap:4px;border-bottom:1px solid var(--border);z-index:100}.nav-links.open{display:flex}.nav-links a{width:100%;text-align:center;padding:10px;border:1px solid var(--border);border-radius:var(--r)}}
-@media(max-width:1024px){.hero-grid{grid-template-columns:1fr}.sys-panel{display:none}.chain-strip{grid-template-columns:repeat(3,1fr)}.skills-wrap{grid-template-columns:1fr}.proj-grid{grid-template-columns:1fr}.proj-card.feat{grid-column:span 1;grid-template-columns:1fr}.proj-card.feat .proj-body{border-right:none;border-bottom:1px solid var(--border)}.edu-grid{grid-template-columns:1fr}.lang-grid{grid-template-columns:repeat(2,1fr)}.contact-panel{padding:36px 24px}}
-@media(max-width:640px){.hero-name{font-size:2.4rem}.chain-strip{grid-template-columns:1fr 1fr}.pub-card{grid-template-columns:1fr}.tl-item{grid-template-columns:1fr}.timeline::before{display:none}.tl-node{display:none}.wrap{width:min(100% - 32px,1180px)}.contact-lnks{flex-direction:column;align-items:center}}
+@media(max-width:768px){
+  body{cursor:auto}
+  #cursor,#cursor-ring{display:none}
+  .nav-toggle{display:flex}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:rgba(1,11,15,0.98);backdrop-filter:blur(20px);padding:16px;gap:4px;border-bottom:1px solid var(--border);z-index:100}
+  .nav-links.open{display:flex}
+  .nav-links a{width:100%;text-align:center;padding:10px;border:1px solid var(--border);border-radius:var(--r)}
+  .hero{padding-top:56px}
+  .hero-cta .btn,.contact-lnks .cl{width:100%;justify-content:center}
+}
+@media(max-width:1024px){
+  .hero-grid{grid-template-columns:1fr}
+  .sys-panel{display:none}
+  .chain-strip{grid-template-columns:repeat(3,1fr)}
+  .skills-wrap{grid-template-columns:1fr}
+  .proj-grid{grid-template-columns:1fr}
+  .proj-card.feat{grid-column:span 1;grid-template-columns:1fr}
+  .proj-card.feat .proj-body{border-right:none;border-bottom:1px solid var(--border)}
+  .edu-grid{grid-template-columns:1fr}
+  .lang-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-panel{padding:36px 24px}
+}
+@media(max-width:640px){
+  .section{padding:56px 0}
+  .section-head{margin-bottom:28px;gap:10px}
+  .section-title{font-size:1.05rem}
+  .hero{padding:42px 0 32px;min-height:auto}
+  .hero-tag{font-size:0.7rem}
+  .hero-name{font-size:2.15rem}
+  .hero-role{font-size:0.84rem;min-height:2.6em}
+  .hero-desc{font-size:0.95rem}
+  .chain-strip{grid-template-columns:1fr}
+  .cb-num{font-size:1.4rem}
+  .pub-card{grid-template-columns:1fr;gap:12px}
+  .pub-yr{font-size:1.1rem}
+  .tl-item{grid-template-columns:1fr;gap:0}
+  .timeline::before,.tl-node{display:none}
+  .tl-card,.proj-body,.proj-side,.skill-cluster,.edu-card,.contact-panel{padding:18px}
+  .proj-hdr{flex-direction:column;align-items:flex-start;gap:8px}
+  .proj-bls li,.tl-bls li,.proj-desc,.contact-sub,.hbox-t{font-size:0.86rem}
+  .wrap{width:min(100% - 24px,1180px)}
+  .contact-lnks{flex-direction:column;align-items:stretch}
+  .contact-note{font-size:0.7rem;line-height:1.6}
+  .lang-grid{grid-template-columns:1fr}
+}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
@@ -282,7 +324,7 @@ footer{padding:26px 0;border-top:1px solid var(--border);text-align:center;color
       </svg>
       AR
     </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-controls="navLinks" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="navLinks">
@@ -312,9 +354,9 @@ footer{padding:26px 0;border-top:1px solid var(--border);text-align:center;color
         <div class="hero-role"><span id="typeText"></span><span class="blink"></span></div>
         <p class="hero-desc">Building production AI and Web3 systems that ship, scale, and survive. Multi-chain DeFi securing $1M+ TVL &middot; Self-hosted LLM infrastructure &middot; Smart contract security &middot; Published researcher in federated AI.</p>
         <div class="hero-cta">
-          <a href="Adarsh_rouniyar.pdf" target="_blank" rel="noreferrer" class="btn p">&#8595; resume.pdf</a>
-          <a href="https://github.com/darkblood784" target="_blank" rel="noreferrer" class="btn o">&#8997; github</a>
-          <a href="https://www.linkedin.com/in/adarsh-rouniyar-876b1419b/" target="_blank" rel="noreferrer" class="btn g">in linkedin</a>
+          <a href="Adarsh_rouniyar.pdf" target="_blank" rel="noreferrer" class="btn p">&#8595; Download Resume</a>
+          <a href="https://github.com/darkblood784" target="_blank" rel="noreferrer" class="btn o">&#8997; GitHub</a>
+          <a href="https://www.linkedin.com/in/adarsh-rouniyar-876b1419b/" target="_blank" rel="noreferrer" class="btn g">&#128172; LinkedIn</a>
         </div>
         <div class="chain-strip reveal">
           <div class="chain-block"><div class="cb-num">$1M+</div><div class="cb-lbl">USDT/USDC TVL SECURED</div></div>
@@ -566,10 +608,10 @@ footer{padding:26px 0;border-top:1px solid var(--border);text-align:center;color
       <p class="contact-sub">Open to AI systems, Web3 infrastructure, LLM platform, and security-focused engineering opportunities. Based in Kaohsiung, Taiwan &mdash; available globally.</p>
       <div class="contact-lnks">
         <a href="mailto:adarsh@csie.io" class="cl m">&#9993; adarsh@csie.io</a>
-        <a href="https://www.linkedin.com/in/adarsh-rouniyar-876b1419b/" target="_blank" rel="noreferrer" class="cl s">in LinkedIn</a>
+        <a href="https://www.linkedin.com/in/adarsh-rouniyar-876b1419b/" target="_blank" rel="noreferrer" class="cl s">&#128172; LinkedIn</a>
         <a href="https://github.com/darkblood784" target="_blank" rel="noreferrer" class="cl s">&#8997; GitHub</a>
         <a href="https://darkblood784.github.io/Adarsh-Rouniyar/" target="_blank" rel="noreferrer" class="cl s">&#8599; Portfolio</a>
-        <a href="Adarsh_rouniyar.pdf" target="_blank" rel="noreferrer" class="cl s">&#8595; Resume</a>
+        <a href="Adarsh_rouniyar.pdf" target="_blank" rel="noreferrer" class="cl s">&#8595; Download Resume</a>
       </div>
       <div class="contact-note">&#128205; Kaohsiung, Taiwan &middot; +886 937 772 769 &middot; adarsh@csie.io</div>
     </div>
@@ -579,17 +621,34 @@ footer{padding:26px 0;border-top:1px solid var(--border);text-align:center;color
 <footer><div class="wrap">&copy; <span id="yr"></span> Adarsh Rouniyar &middot; AI &middot; Web3 &middot; Security</div></footer>
 
 <script>
+const prefersReducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isTouchDevice=window.matchMedia('(hover: none), (pointer: coarse)').matches;
+const lowMotionMode=prefersReducedMotion||isTouchDevice;
+
 // CURSOR
 const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
-(function animR(){rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animR)})();
-document.querySelectorAll('a,button').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cur.style.width='20px';cur.style.height='20px';ring.style.width='48px';ring.style.height='48px';ring.style.borderColor='rgba(0,240,212,0.8)'});
-  el.addEventListener('mouseleave',()=>{cur.style.width='12px';cur.style.height='12px';ring.style.width='32px';ring.style.height='32px';ring.style.borderColor='rgba(0,240,212,0.5)'});
-});
+let mx=window.innerWidth/2,my=window.innerHeight/2,rx=mx,ry=my;
+if(isTouchDevice){
+  document.body.style.cursor='auto';
+  cur.style.display='none';
+  ring.style.display='none';
+}else{
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+  (function animR(){rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animR)})();
+  document.querySelectorAll('a,button').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{cur.style.width='20px';cur.style.height='20px';ring.style.width='48px';ring.style.height='48px';ring.style.borderColor='rgba(0,240,212,0.8)'});
+    el.addEventListener('mouseleave',()=>{cur.style.width='12px';cur.style.height='12px';ring.style.width='32px';ring.style.height='32px';ring.style.borderColor='rgba(0,240,212,0.5)'});
+  });
+}
+
+if(lowMotionMode){
+  document.getElementById('neural-canvas').style.display='none';
+  document.getElementById('hex-canvas').style.display='none';
+  document.getElementById('mat-canvas').style.display='none';
+}
 
 // NEURAL NETWORK
+if(!lowMotionMode){
 const nc=document.getElementById('neural-canvas');
 const nctx=nc.getContext('2d');
 let W,H,nodes=[];
@@ -657,6 +716,7 @@ function rsM(){mc.width=mW=window.innerWidth;mc.height=mH=window.innerHeight;dro
 rsM();window.addEventListener('resize',rsM);
 const mchars='01アイウEFABCD9876xz{}[]';
 function drawMat(){
+  if(lowMotionMode)return;
   mctx.fillStyle='rgba(1,11,15,0.05)';mctx.fillRect(0,0,mW,mH);
   mctx.fillStyle='rgba(0,255,136,0.6)';mctx.font='13px JetBrains Mono,monospace';
   drops.forEach((y,i)=>{
@@ -669,6 +729,7 @@ function drawMat(){
 // MAIN ANIMATION LOOP
 let frame=0;
 (function anim(){
+  if(lowMotionMode)return;
   frame++;
   // Neural
   nctx.clearRect(0,0,W,H);
@@ -701,9 +762,11 @@ let frame=0;
   requestAnimationFrame(anim);
 })();
 setInterval(drawMat,60);
+}
 
 // CHAIN VIZ
 (function(){
+  if(lowMotionMode)return;
   const cv=document.getElementById('chainVizCanvas');
   if(!cv)return;
   const ctx=cv.getContext('2d');
@@ -791,8 +854,21 @@ const bio=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.ta
 document.querySelectorAll('.sb-fill').forEach(b=>bio.observe(b));
 
 // NAV
-document.getElementById('navToggle').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));
-document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+const navToggle=document.getElementById('navToggle');
+const navLinks=document.getElementById('navLinks');
+function closeNav(){
+  navLinks.classList.remove('open');
+  navToggle.setAttribute('aria-expanded','false');
+}
+navToggle.addEventListener('click',()=>{
+  const isOpen=navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded',String(isOpen));
+});
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',closeNav));
+document.addEventListener('click',e=>{
+  if(!navLinks.contains(e.target)&&!navToggle.contains(e.target))closeNav();
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeNav();});
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}});
 });
