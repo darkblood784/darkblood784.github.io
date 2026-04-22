@@ -35,13 +35,16 @@ a{color:inherit;text-decoration:none}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:20px}
 .nav-brand{display:flex;align-items:center;gap:10px;font-family:'Orbitron',sans-serif;font-weight:700;font-size:0.92rem;letter-spacing:0.08em;color:var(--cyan);text-shadow:0 0 20px rgba(0,240,212,0.6)}
 .brand-hex svg{width:32px;height:32px;animation:hexSpin 8s linear infinite;display:block}
-.nav-links{display:flex;align-items:center;gap:4px;list-style:none}
+.nav-links{display:flex;align-items:center;gap:6px;list-style:none}
 .nav-links a{padding:6px 14px;border-radius:var(--r);font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:var(--muted);letter-spacing:0.04em;transition:color 180ms,background 180ms}
 .nav-links a:hover{color:var(--cyan);text-shadow:0 0 12px var(--glow-c);background:rgba(0,240,212,0.05)}
 .nav-cta{padding:8px 18px !important;color:var(--bg) !important;background:var(--cyan) !important;font-weight:700 !important;box-shadow:0 0 24px var(--glow-c);transition:box-shadow 200ms,transform 200ms !important}
 .nav-cta:hover{box-shadow:0 0 40px rgba(0,240,212,0.7) !important;transform:translateY(-1px) !important}
 .nav-toggle{display:none;background:none;border:1px solid var(--border);border-radius:var(--r);padding:9px 11px;cursor:pointer;flex-direction:column;gap:4px}
 .nav-toggle span{display:block;width:18px;height:1px;background:var(--cyan)}
+.nav-toggle[aria-expanded="true"]{border-color:rgba(0,240,212,0.55);box-shadow:0 0 22px rgba(0,240,212,0.22)}
+.nav-k{display:none}
+.nav-t{display:inline}
 /* SECTIONS */
 .section{padding:80px 0;position:relative}
 .section-head{display:flex;align-items:center;gap:16px;margin-bottom:48px}
@@ -264,10 +267,17 @@ footer{padding:26px 0;border-top:1px solid var(--border);text-align:center;color
   #cursor,#cursor-ring{display:none}
   .nav-inner{position:relative}
   .nav-toggle{display:flex}
-  .nav-links{display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;width:100%;flex-direction:column;background:rgba(1,11,15,0.995);padding:10px;gap:8px;border:1px solid var(--border);border-radius:var(--r);box-shadow:0 18px 40px rgba(0,0,0,0.55);z-index:700}
+  .nav-links{display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;width:100%;flex-direction:column;background:linear-gradient(180deg,rgba(0,19,28,0.99),rgba(0,10,17,0.99));padding:12px;gap:10px;border:1px solid rgba(0,240,212,0.2);border-radius:8px;box-shadow:0 18px 40px rgba(0,0,0,0.55);z-index:700}
+  .nav-links::before{content:'NAV // AI | WEB3 | SECURITY';font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:rgba(0,240,212,0.65);letter-spacing:0.14em;padding:0 2px 6px}
   .nav-links.open{display:flex}
   .nav-links li{width:100%}
-  .nav-links a{display:flex;width:100%;text-align:center;justify-content:center;padding:12px;border:1px solid var(--border);border-radius:var(--r);line-height:1.2}
+  .nav-links a{display:flex;width:100%;justify-content:space-between;align-items:center;padding:12px 14px;border:1px solid rgba(0,240,212,0.16);border-radius:6px;line-height:1.2;background:rgba(0,12,18,0.68)}
+  .nav-links a::after{content:'>>';color:rgba(0,240,212,0.55);font-size:0.72rem}
+  .nav-k{display:inline-flex;padding:3px 8px;border:1px solid rgba(0,240,212,0.22);border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.1em;color:rgba(0,240,212,0.7)}
+  .nav-t{font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;color:#9ac6d2}
+  .nav-cta{justify-content:center !important;background:linear-gradient(90deg,var(--cyan),var(--green)) !important;color:var(--bg) !important}
+  .nav-cta::after{content:'' !important}
+  .nav-cta .nav-t{color:#031014;font-weight:800}
   .hero{padding-top:56px}
   .hero-cta .btn,.contact-lnks .cl{width:100%;justify-content:center}
 }
@@ -330,13 +340,13 @@ footer{padding:26px 0;border-top:1px solid var(--border);text-align:center;color
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#skills">skills</a></li>
-      <li><a href="#experience">experience</a></li>
-      <li><a href="#projects">projects</a></li>
-      <li><a href="#research">research</a></li>
-      <li><a href="#education">education</a></li>
-      <li><a href="#contact">contact</a></li>
-      <li><a href="Adarsh_rouniyar.pdf" target="_blank" rel="noreferrer" class="nav-cta">resume.pdf</a></li>
+      <li><a href="#skills"><span class="nav-k">AI</span><span class="nav-t">skills</span></a></li>
+      <li><a href="#experience"><span class="nav-k">OPS</span><span class="nav-t">experience</span></a></li>
+      <li><a href="#projects"><span class="nav-k">WEB3</span><span class="nav-t">projects</span></a></li>
+      <li><a href="#research"><span class="nav-k">ML</span><span class="nav-t">research</span></a></li>
+      <li><a href="#education"><span class="nav-k">CORE</span><span class="nav-t">education</span></a></li>
+      <li><a href="#contact"><span class="nav-k">SEC</span><span class="nav-t">contact</span></a></li>
+      <li><a href="Adarsh_rouniyar.pdf" target="_blank" rel="noreferrer" class="nav-cta"><span class="nav-t">Download Resume</span></a></li>
     </ul>
   </div>
 </nav>
@@ -879,3 +889,5 @@ document.getElementById('yr').textContent=new Date().getFullYear();
 </script>
 </body>
 </html>
+
+
